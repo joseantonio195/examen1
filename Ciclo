@@ -1,0 +1,24 @@
+public class Ciclo {
+  public String foo(int n) {
+    String str = null;
+
+    if (n % 5 == 0) {
+       str = "foo";
+    } else if (n % 7 == 0) {
+       str = "bar";
+    } else if (n % 5 == 0 && n % 7 == 0) {
+       str = "foobar";
+    } else {
+       str = Integer.toString(n);
+    }
+
+    return str;
+  }
+
+  public void fooBar() {
+    for (int i = 0; i < 200; ++i) {
+      System.out.println(foo(i));
+    }
+  }
+
+}
