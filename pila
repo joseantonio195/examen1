@@ -1,0 +1,37 @@
+package org.example;
+
+import java.util.ArrayList;
+
+public class Pila<E> {
+    private ArrayList<E> pila;
+
+    // Constructor: inicializa la pila vacía
+    public Pila() {
+        this.pila = new ArrayList<>();
+    }
+
+    // Método pop: devuelve null si la pila está vacía, o el último elemento añadido
+    public E pop() {
+        if (pila.isEmpty()) {
+            return null; // Criterio 1: si la pila está vacía, devuelve null
+        }
+        // Criterio 2: si la pila no está vacía, devuelve el último elemento añadido
+        return pila.remove(pila.size() - 1);
+    }
+
+    // Método push: añade un elemento a la pila
+    public void push(E e) {
+        pila.add(e); // Criterio 3: añade un elemento a la pila
+    }
+
+    // Método toString: devuelve una cadena con los elementos de la pila en orden de inserción
+    @Override
+    public String toString() {
+        StringBuilder res = new StringBuilder();
+        // Recorre la pila desde el primer elemento hasta el último
+        for (int i = 0; i < pila.size(); i++) {
+            res.append("[ ").append(pila.get(i)).append(" ]\n"); // Criterio 4: muestra el orden de inserción
+        }
+        return res.toString();
+    }
+}
